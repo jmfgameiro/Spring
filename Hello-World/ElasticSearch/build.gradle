@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'ear'
+
+//
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+version = '1.0.0.Final'
+
+//
+repositories {
+    mavenCentral()
+}
+
+//
+dependencies {
+	compile group: 'org.springframework', 		name: 'spring-test',				version: '4.3.1.RELEASE'
+	compile group: 'org.springframework.data',	name: 'spring-data-elasticsearch',	version: '1.3.4.RELEASE'
+	compile group: 'org.elasticsearch',			name: 'elasticsearch',				version: '1.7.5'
+	
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+//
+eclipse {
+	wtp {
+		facet {
+			facet name: 'jst.java',		version: sourceCompatibility
+			facet name: 'wst.jsdt.web', version: '1.0'
+		}
+	}
+}
