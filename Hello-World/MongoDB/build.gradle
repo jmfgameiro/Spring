@@ -22,11 +22,6 @@ dependencies {
 }
 
 //
-test {
-    systemProperties 'property': 'value'
-}
-
-//
 eclipse {
 	wtp {
 		facet {
