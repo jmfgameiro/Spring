@@ -17,11 +17,13 @@ public class MongodbSpringConfig {
 	private static String host;
 	private static String dbname;
 	
+	
 	/***** STATIC *****/
 	static {
 		host = "127.0.0.1";
 		dbname = "test";
 	}
+	
 	
 	/***** BEANS *****/
 	@Bean

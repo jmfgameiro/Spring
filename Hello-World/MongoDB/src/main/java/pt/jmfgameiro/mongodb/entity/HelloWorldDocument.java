@@ -12,6 +12,7 @@ public class HelloWorldDocument {
 	@Id
 	private final String id;
 	
+	
 	/***** VARIABLES *****/
 	private String name;
 	
