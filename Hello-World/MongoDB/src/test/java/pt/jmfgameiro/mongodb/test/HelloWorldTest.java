@@ -20,7 +20,7 @@ public class HelloWorldTest {
 	/***** CONSTANTS *****/
 	@Autowired
 	private HelloWorldRepository repository;
-	private final String id = "id", name = "jmfgameiro";
+	private static final String ID = "id", NAME = "jmfgameiro";
 	
 	
 	/***** BEFORE *****/
@@ -28,7 +28,7 @@ public class HelloWorldTest {
 	public void init() {
 		assertNotNull( "The repository was not autowired!", repository );
 		this.repository.deleteAll();
-		HelloWorldDocument hello = new HelloWorldDocument( this.id, this.name );
+		HelloWorldDocument hello = new HelloWorldDocument( ID, NAME );
 		this.repository.save( hello );
 	}
 	
@@ -36,9 +36,9 @@ public class HelloWorldTest {
 	@Test
 	public void execute() {
 		assertEquals( "There are more elements than expected", 1, this.repository.count() );
-		HelloWorldDocument hello = this.repository.findOne( this.id );
+		HelloWorldDocument hello = this.repository.findOne( ID );
 		assertNotNull( "There is no element for the given ID!", hello );
-		assertEquals( "The name is not the same as the provided!", hello.getName(), this.name );
+		assertEquals( "The name is not the same as the provided!", hello.getName(), NAME );
 	}
 	
 	
